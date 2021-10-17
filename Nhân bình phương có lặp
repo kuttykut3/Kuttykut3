@@ -1,0 +1,74 @@
+
+package nhanbinhphuongcolap;
+
+import java.util.Scanner;
+
+
+public class NhanBinhPhuongCoLap {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        long n,a,k;
+
+         System.out.println("Nhap n: ");
+        n = input.nextLong();
+         System.out.println("Nhap a: ");
+        a = input.nextLong();
+         System.out.println("Nhap k: ");
+        k = input.nextLong();
+        
+        long tmp = k;
+        System.out.print("Chuyen "+tmp+" sang nhi phan: ");
+        
+        long[] arrK = new long[20];
+        int i = 0;
+        while(tmp>0)
+        {
+            arrK[i]=tmp%2;
+            tmp=tmp/2;
+            i++;
+        }
+        for(int j = i-1 ; j>=0; j--)
+        {
+            System.out.print(arrK[j]);
+        }
+        System.out.println(" ");
+      
+        long b = 1;
+        if(k==0)
+        {
+            b = 0;
+        }
+        else
+        {
+       
+        long A = a;
+        System.out.println("Dat A=a="+a);
+        int p = 0;
+        if(arrK[p]==1)
+        {
+            b = a;
+            System.out.print("- k_0="+arrK[p]+", dat b=a="+a);
+            System.out.println(" ");
+        }
+        p++;
+        while(true)
+        {
+            A=(A*A)%n;
+            System.out.println("Dat A=A^2 mod "+n+"="+A);
+            if(arrK[p]==1)
+            {
+                b=(b*A)%n;
+                System.out.println("- k_"+p+" ="+arrK[p]+", dat b=b*A mod "+n+"="+b);
+            }
+            p++;
+            if(p==i)
+            {
+                break;
+            }
+        }
+        }
+        System.out.println("=> "+a+"^"+k+" mod "+n+"="+b);
+    }
+    
+}
