@@ -1,0 +1,44 @@
+
+package maaffine;
+
+import java.util.Scanner;
+
+
+public class MaAffine {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Nhap vao ban ro: ");
+        String plainText;
+        plainText = input.nextLine();
+        int a,b;
+        System.out.println("Nhap vao a,b tuong ung: ");
+        a = input.nextInt();
+        b = input.nextInt();
+       
+        String cipherText = "";
+        
+        for(int i=0; i < plainText.length(); i++ )
+        {
+            if(plainText.charAt(i)>='a' && plainText.charAt(i)<='z')
+            {
+              
+                cipherText += (char)(((plainText.charAt(i)- 'a')*a + b) % 26 + 'a');
+            }
+            else if(plainText.charAt(i)>='A' && plainText.charAt(i)<='Z')
+            {
+              
+                cipherText += (char)(((plainText.charAt(i)- 'A')*a + b) % 26 + 'A');
+            }
+            else
+            {
+                cipherText += plainText.charAt(i);
+            }
+        }
+       
+        System.out.println("Ban ma la: " + cipherText);
+    }
+    
+}
