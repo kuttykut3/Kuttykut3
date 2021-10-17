@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shift.cipher.pkg1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author duc
+ */
+public class ShiftCipher1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Nhap vao ban ro: ");
+        String plainText;
+        plainText = input.nextLine();
+        System.out.println("Nhap vao key: ");
+        int key = input.nextInt();
+        
+        String cipherText = "";
+        
+        for(int i=0; i < plainText.length(); i++ )
+        {
+            if(plainText.charAt(i)>='a' && plainText.charAt(i)<='z')
+            {
+                 cipherText += (char)((plainText.charAt(i)- 'a' + key) % 26 + 'a');
+            }
+            else if(plainText.charAt(i)>='A' && plainText.charAt(i)<='Z')
+            {
+                 cipherText += (char)((plainText.charAt(i)- 'A' + key) % 26 + 'A');
+            }
+            else
+            {
+                cipherText += plainText.charAt(i);
+            }
+        }
+       
+        System.out.println("Ban ma la: " + cipherText);
+    }
+    
+}
