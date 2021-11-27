@@ -1,0 +1,132 @@
+#Bai 7
+'''
+str = """chuoi vua co ki tu ' vua co ki tu " ne """
+sotrinh = "chuoi nay co ki tu \' , ki tu \" va ca ki tu \\ nua, ao chua"
+print(str)
+print(sotrinh)
+print('\a')
+
+a = '35\53ni34'
+print(a)
+'''
+
+#Bai 8 
+"""
+''' khi dung comment nay ma o duoi co may cai chuoi cung dung dau nay thi vai loz luon'''
+tmp = r'''day la chuoi tran, thich in clg thi in \n ' " \ thoai mai de \t '''
+print(tmp)
+print("-------------------------------------")
+# toan tu + dung de noi cac chuoi
+a = " djt me "
+b = " thang quy "
+c = ' thang hoang '
+d = ''' ngu vcl '''
+e = "oc cho"
+print(a+c+d)
+print(a+b+e)
+print("-------------------------------------")
+# toan tu * lap lai chuoi N lan, voi N la mot so nguyen
+tmp = 'abc'
+print(tmp*3)
+print("-------------------------------------")
+# toan tu 'in' kiem tra chuoi s co xuat hien trong chuoi A hay khong, gia tri tra ve la true hoac false
+cac = 'cac'
+concac = 'concac'
+print(cac in concac)
+print("-------------------------------------")
+"""
+
+'''
+# cac toan tu so sanh hai chuoi <, >, ==, !=, <=, >=,.... tra ve gia tri True or False
+# khi so sanh 2 ky tu, no se so sanh vi tri cua 2 ki tu trong bang ma Unicode
+print('a' < 'b')
+print("-------------------------------------")
+#khi so sanh 2 chuoi, se so sanh lan luot tu trai qua phai, neu het chuoi 1 deu giong voi chuoi 2 thi se so sanh do dai chuoi
+print('ac' > 'abc') # Ở kí tự thứ hai (có chỉ số index là 1) thì ‘c’ > ‘b’
+print('z' > 'abcdefz') # Kí tự đầu tiên: ‘z’ > ‘a’
+print('abc' < 'b') # Kí tự đầu tiên: ‘z’ > ‘a’
+print('ab' < 'abc') # Đã xét hết 2 cặp kí tự, nhưng không tìm thấy sự khác nhau, chương trình so sánh độ dài của 2 chuỗi
+print("-------------------------------------")
+# de xem vi tri cua 1 ky tu trong bang ma Unicode, ta dung ham ord() (bang ma Unicode tuong duong he 10 bang ma ASCII)
+print(ord('a'))
+'''
+
+
+# Indexing
+'''Trong một chuỗi của Python, các kí tự tạo nên chuỗi đó sẽ được đánh số từ 0 tới n – 1 từ trái qua phải 
+và từ -1 đến -n theo chiều từ phải sang trái, với n là số kí tự có trong chuỗi.'''
+'''
+temp = 'chuoi 7'
+print(temp[0]) # vi tri index = 0 cua chuoi temp la ki tu 'c'
+print(temp[-4]) # vi tri index = -4 cua chuoi temp la ki tu 'o'
+print(len(temp)) # do dai chuoi
+'''
+
+'''
+# Cat chuoi: <chuoi>[vi tri bat dau:vi tri  dung]
+temp = 'chuoi 7'
+print(temp[0:3])
+print(temp[-7:-4])
+#de cat vi tri cuoi cung cua chuoi, ta dung vi tri dac biet: None hoac bo trong vi tri dung
+print(temp[2:None])
+print(temp[2:])
+# de None o dau thi bat dau cat chuoi tu vi tri index = 0, neu bo qua vi tri bat dau python se mac dinh la vi tri 0
+print(temp[None:3])
+print(temp[:3])
+
+print(temp[1:-3])
+
+# in ra nguyen chuoi
+print(temp[:])
+
+# cat chuoi su dung them buoc nhay: <chuoi>[vi tri bat dau:vi tri  dung: buoc nhay]
+
+print(temp[0:5:2])
+# co the cat chuoi tu phai sang trai bang cach cho buoc nhay la so am:
+print(temp[5:0:-2])
+# neu vi tri bat dau la None thi no se cat tu cuoi chuoi
+print(temp[:0:-2])
+# neu vi tri dung la None thi no se cat den het chuoi
+print(temp[5::-2])
+# lay chuoi nguoc:
+print(temp[::-1])
+'''
+
+# Ep kieu du lieu
+
+'''
+# ep 1 chuoi so nguyen ve dang so nguyen (khong the ep 1 chuoi so thuc ve dang so nguyen)
+a = '69'
+b = int(a)
+print(b+1)
+
+# ep 1 so thuc ve dang so nguyen
+c = 6.9
+d = int(c)
+print(d)
+'''
+'''
+# ep 1 chuoi so thuc ve dang so thuc:
+a = '6.9'
+b = float(a)
+print(b+0.1)
+c = int(b)
+print(c)
+
+# ep 1 so thuc hoac 1 so nguyen ve dang chuoi
+d = str(b)
+e = str(c)
+print(d + e)
+
+'''
+
+# Thay doi noi dung chuoi: khong the thay the nhu cac ngon ngu khac: vd str[1] = 'a' -> khong duoc
+# chi co the thay doi mot cach gian tiep:
+s = 'abc xyz'
+s = 'k' + s[1:]
+print(s)
+b = 'abc xyz'
+b = b[0:2] + 'k' + b[3:]
+print(b)
+
+#Bai 9:
