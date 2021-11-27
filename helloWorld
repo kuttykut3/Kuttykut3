@@ -1,1 +1,66 @@
+#Bai 5: Bien trong python
+'''
+    ten bien trong python co phan biet chu hoa va chu thuong
+    vd : pi     Pi      pI      PI 
+    la 4 bien khac nhau
+'''
+'''
+a = 3
+b = 6
+print(a+b)
+name, age, status = "Phuc" , 20 , "confused" #khai bao nhieu bien cung luc
+print(name)
+# print(type(name)) kieu du lieu cua bien
+print(age)
+# print(type(age))
+print(status)
+# print(type(status))
+'''
+
+
+#Bai 6: Kieu du lieu so trong python
+'''
+
+    so thuc co do chinh xac 15 chu so phan thap phan
+#cai decimal de cho so thuc do chinh xac cao hon
+from decimal import *
+import decimal
+getcontext().prec = 30
+print(decimal(10) / decimal(3))
+'''
+
+'''
+    #Phan so ( fraction )
+from fractions import*
+
+c = Fraction(8,3)
+d = Fraction (3,8)
+print(c*d)
+
+    #So phuc ( complex )
+e = 3 + 2j
+print(type(e))
+f = complex(3,2) # khai bao e theo cach khac
+print(e)
+print(f)
+print(e.real) # lay phan thuc cua so phuc
+print(e.imag) # lay phan ao cua so phuc
+print(e+f)
+
+'''
+import math
+
+print(8 // 3) # chia lay phan nguyen, ket qua luon <= x / y
+print(8 % 3) #chia lay phan du
+print(8 ** 3) # 8 mu~ 3
+
+pi = 3.1415983213234
+print(math.trunc(pi)) #lay phan nguyen cua so x
+print(math.floor(pi)) # lam tron can duoi cua so x
+print(math.ceil(pi)) # lam tron can tren cua so x
+
+print(math.fabs(-8.2)) # tra ve gia tri tuyet doi cua so x
+print(math.sqrt(9)) # tra ve can bac hai cua so x
+print(math.gcd(9,3)) # tra ve uoc chung lon nhat cua 2 so
+
 
