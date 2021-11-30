@@ -1,0 +1,43 @@
+  Scanner input = new Scanner(System.in);
+        int n;
+        System.out.println("Nhap n: ");
+        n = input.nextInt();
+        
+        System.out.println("Liet ke cac so nguyen tu 2 den "+n);
+        for(int i=2;i<=n;i++)
+        {
+            System.out.print(i+"  ");
+        }
+        System.out.println("  ");
+
+        boolean[] check = new boolean[n + 1];
+        // Khởi tạo tất cả các số [2...N] đều là số nguyên tố
+        for (int i = 2; i <= n; i++) {
+          check[i] = true;
+        }
+
+        // Thuật toán sàng nguyên tố
+        // Nếu một số là số nguyên tố, thì tất cả các bội của nó không phải số nguyên tố
+        for (int i = 2; i <= n; i++) {
+          if (check[i] == true) {
+            System.out.println("p="+i);
+            for (int j = 2 * i; j <= n; j += i) {
+              check[j] = false;
+            }
+            for( int v = 2 ; v<=n; v++)
+                {
+                    if(check[v]==true)
+                    {
+                        System.out.print(v+"  ");
+                    }
+                }
+             System.out.println(" ");
+          }
+        }
+        // In ra các số là số nguyên tố
+        System.out.println("Cac so nguyen to <= "+n+" la:");
+        for (int i = 2; i <= n; i++) {
+          if (check[i] == true) {
+            System.out.print(i + "  ");
+          }
+        }
