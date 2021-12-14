@@ -76,3 +76,142 @@ public class MidTermOOP_14122021 {
     }
     
 }
+---------------------------------------------------------------------------------------------------------------
+
+package midtermoop_14122021;
+
+
+public class Book {
+    public int id;
+    public String name;
+    public int price;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" + "id=" + id + ", name=" + name + ", price=" + price + '}';
+    }
+    
+    
+}
+-------------------------------------------------------------------------------------------------
+
+package midtermoop_14122021;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Store {
+    
+    Scanner ip = new Scanner(System.in);
+    
+    public static int totalItems = 0;
+    public int MAX_ITEMS = 1000;
+    ArrayList<Book> listItems = new ArrayList();
+    
+    public void add ()
+    {
+        Book b1 = new Book();
+        System.out.println("Nhap id: ");
+        b1.setId(ip.nextInt());
+        ip.nextLine();
+        System.out.println("Nhap ten sach: ");
+        b1.setName(ip.nextLine());
+        System.out.println("Nhap gia sach: ");
+        b1.setPrice(ip.nextInt());
+        listItems.add(b1);
+        totalItems++;
+    }
+    
+    public void delete (int id)
+    {
+       for(Book x: listItems)
+        {
+            if(x.getId()== id)
+            {
+                listItems.remove(x);
+                totalItems--;
+                System.out.println("Xoa thanh cong!");
+                break;
+            }
+            else
+            {
+                System.out.println("Khong co sach trung voi id can xoa!");
+                break;
+            }
+        }
+    }
+    
+    public void find(String name)
+    {
+        for(Book x: listItems)
+        {
+            if(x.getName().equalsIgnoreCase(name))
+            {
+                System.out.println(x.toString());
+                break;
+            }
+            else
+            {
+                System.out.println("Khong tim duoc sach theo ten can tim!");
+                break;
+            }
+        }
+    }
+    
+    public void edit(int id)
+    {
+        for(Book x: listItems)
+        {
+            if(x.getId()== id)
+            {          
+                ip.nextLine();
+                System.out.println("Nhap ten sach moi: ");
+                x.setName(ip.nextLine());
+                System.out.println("Nhap gia sach moi: ");
+                x.setPrice(ip.nextInt());
+                break;
+            }
+            else
+            {
+                System.out.println("Khong co sach nao trung voi id ban vua nhap!");
+                break;
+            }  
+        }
+    }
+    
+    public void list()
+    {
+        System.out.println("Tong so sach la: " + totalItems);
+        for(Book x: listItems)
+        {
+            System.out.println(x + "");
+        }
+    }
+    
+    
+}
