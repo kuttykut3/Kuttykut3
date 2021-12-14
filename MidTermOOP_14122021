@@ -1,0 +1,78 @@
+
+package midtermoop_14122021;
+
+import static java.lang.System.exit;
+import java.util.Scanner;
+
+public class MidTermOOP_14122021 {
+
+    public static void menu()
+    {
+        System.out.println("\t\tMENU");
+        System.out.println("1.Them sach");
+        System.out.println("2.Chinh sua thong tin sach");
+        System.out.println("3.Xoa sach");
+        System.out.println("4.Tim sach");
+        System.out.println("5.Hien thi sach");
+        System.out.println("0.Exit");
+    }
+    
+    public static void main(String[] args) {
+        Scanner ip = new Scanner(System.in);
+        Store sach = new Store();
+        int chon;
+        while(true)
+        {
+        menu();
+        chon = ip.nextInt();
+        switch(chon)
+        {
+            case 1:
+            {
+                System.out.println("Ban da chon nhap them sach!");
+                sach.add();
+                break;
+            }
+            case 2:
+            {
+                System.out.println("Ban da chon sua thong tin sach!");
+                System.out.println("Nhap id sach can sua: ");
+                int idSua = ip.nextInt();
+                sach.edit(idSua);
+                break;
+            }
+            case 3:
+            {
+                System.out.println("Ban da chon xoa sach!");
+                System.out.println("Nhap id sach can xoa: ");
+                int idXoa = ip.nextInt();
+                sach.delete(idXoa);
+                break;
+            }
+            case 4:
+            {
+                ip.nextLine();
+                System.out.println("Ban da chon tim sach!");
+                System.out.println("Nhap ten sach can tim:");
+                String name = ip.nextLine();
+                sach.find(name);
+                break;
+            }
+            case 5: 
+            {
+                System.out.println("Ban da chon hien thi toan bo sach!");
+                sach.list();
+                break;
+            }
+            case 0:
+            {
+               exit(0);
+            }
+            default:
+                System.out.println("Vui long chon tu 0-5!");
+        }  
+        }
+        
+    }
+    
+}
