@@ -49,6 +49,8 @@
         next2:
             cmp am,0
             jne reset
+            cmp tmp,1
+            je reset
             mov bx,1
             chia:
             mov dx,0
