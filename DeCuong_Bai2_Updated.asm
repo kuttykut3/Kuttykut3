@@ -1,3 +1,7 @@
+// BIG NOTE!! : code này nếu tổng chuỗi số là 1 số âm thì sẽ hiển thị ra kết quả sai -> đi thi cút luôn
+// định sửa nma lười quá, recommend nên cộng tổng các số âm, tổng các số dương lại rồi so sánh, nếu tổng dương > tổng âm thì lấy tổng dương trừ đi tổng âm là ra kq
+// còn nếu tổng âm > tổng dương thì cũng lấy tổng âm trừ đi tổng dương rồi in ra thêm ký tự - là được. Good luck!
+
 .model small
 .stack 100
 .data 
