@@ -1,0 +1,3 @@
+## Hi there 👋
+
+Đây là một vài file code lúc mình còn học tại Học viện Kỹ thuật Mật mã - KMA. Có thể không phải là những đoạn code pro vip nhất nhưng có thể giúp bạn 1 chút gì đó...
